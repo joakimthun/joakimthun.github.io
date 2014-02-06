@@ -1,7 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>!</title>
+
+    <style>
+        #canvas {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            margin-left: -400px;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <canvas id="canvas" width="800" height="600" style="border: 1px solid black;"></canvas>
+    <div id="resources" style="display: none;">
+        <img id="characterImage" src="Images/character.png" />
+        <img id="character_walk_right" src="Images/Character/walk_right.png" />
+        <img id="character_walk_left" src="Images/Character/walk_left.png" />
+        <img id="character_idle_right" src="Images/Character/idle_right.png" />
+        <img id="character_idle_left" src="Images/Character/idle_left.png" />
+        <img id="box" src="Images/Terrain/box.png" />
+        <img id="ground" src="Images/Terrain/ground.png" />
+    </div>
+
+    <script>
+        document.onreadystatechange = function () {
+            if (document.readyState == "complete") {
+                var g = game.initializeGame();
+                g.start();
+            }
+        }
+    </script>
+
+    <script src="Scripts/input.js"></script>
+    <script src="Scripts/sprite.js"></script>
+    <script src="Scripts/math.js"></script>
+    <script src="Scripts/Physics/collisions.js"></script>
+    <script src="Scripts/character.js"></script>
+    <script src="Scripts/player.js"></script>
+    <script src="Scripts/worldObject.js"></script>
+    <script src="Scripts/characterState.js"></script>
+    <script src="Scripts/rendering.js"></script>
+    <script src="Scripts/game.js"></script>
 </body>
 </html>
